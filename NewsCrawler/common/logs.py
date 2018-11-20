@@ -14,7 +14,7 @@ class Logger(object):
         # 设置log级别
         self.logger.setLevel(level=self.level)
         # 日志文件路径(绝对路径，scrapy路径问题）
-        self.path = '/Users/song/Projects/TextClassification/NewsCrawler/NewsCrawler/logs/'
+        self.path ='/home/sshoop/NewsCrawler/NewsCrawler/logs/'
         # 初始化
         self.init()
 

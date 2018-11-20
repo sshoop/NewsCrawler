@@ -11,7 +11,7 @@ def get_token():
     获取头条url中的各种token
     :return: as, cp, _signature
     """
-    with open(r"/Users/song/Projects/TextClassification/NewsCrawler/NewsCrawler/common/generate_signature.js", "r") as js_file:
+    with open(r"/home/sshoop/NewsCrawler/NewsCrawler/common/generate_signature.js", "r") as js_file:
         lines = js_file.readlines()
         js_code = ""
         for line in lines:
