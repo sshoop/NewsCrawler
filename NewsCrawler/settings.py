@@ -94,7 +94,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 # change log lever
-LOG_LEVEL = 'ERROR'
+# LOG_LEVEL = 'ERROR'
 
 MONGO_URI = 'localhost'
-MONGO_DB = 'news_temp'
+MONGO_DB = 'news_tencent'
