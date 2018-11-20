@@ -37,24 +37,24 @@ class MongoPipeline(object):
         collection_name = item['label']
         collection = self.db[collection_name]
         if item is None:
-            logger = Logger('SAVE')
-            logger.info('空')
+            #logger = Logger('SAVE')
+            pass
         elif item['title'] == '头条号自律组织成立':
-            logger = Logger('SAVE')
-            logger.info('失效')
+            #logger = Logger('SAVE')
+            pass
         elif collection.find_one({'url': item['url']}):
             '''
             去重，虽然scrapy默认基于sha1(method + url + body + header)进行去重，
             但我们每次请求的url都不同，而且自己定义url去重麻烦且数据量较小
             因此直接查询mongodb是否重复
             '''
-            logger = Logger('SAVE')
-            logger.info('重复')
+            #logger = Logger('SAVE')
+            pass
         else:
             collection.insert_one(dict(item))
 
             logger = Logger('SAVE')
             message = '成功 ' + item['title']
-            logger.info(message,)
+            # logger.info(message,)
         return item
 

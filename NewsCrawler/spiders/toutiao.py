@@ -66,12 +66,16 @@ class ToutiaoSpider(scrapy.Spider):
                 # 转化后的url
                 down_url = exchange_url(display_url)
                 '''
-                虽然向API接口传递了tag，但忍让返回多种类别的新闻
+                虽然向API接口传递了tag，但仍然返回多种类别的新闻
                 手动获取文章的label, 并传递给parse
                 '''
                 label = content_dict['tag']
-                # self.logger.critical(down_url)
-                yield scrapy.Request(down_url, meta={'label': label}, callback=self.parse)
+                if 'video' in label:
+                    # 去除视频新闻
+                    pass
+                else:
+                    # self.logger.critical(down_url)
+                    yield scrapy.Request(down_url, meta={'label': label}, callback=self.parse)
             except Exception as e:
                 print(e)
 
